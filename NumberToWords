@@ -1,0 +1,50 @@
+package Basics;
+import java.util.Scanner;
+public class NumberTwoWords {
+    public static void main(String args[])
+    {
+        String[] one = {"","One", "Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten"};
+        String[] two = {"Twenty","Eleven","Twelve","Thirteen","Fourteen","Fifteen","Sixteen","Seventeen","eighteen","nineteen"};
+        String[] three = {" ","Twenty","Twenty","Thirty","Fourty","Fifty","Sixty","Seventy","Eighty","Ninety"};
+        
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter the number: ");
+        int number = sc.nextInt();
+        
+        if(number == 0)
+            System.out.println("ZERO");
+        
+        else if(number < 11)
+            System.out.println(one[number]);
+        
+        else if(number > 10 && number < 21)
+            System.out.println(two[number%10]);
+        
+        else if(number > 20 && number < 1000)
+        {
+            int number1 = number;
+            int count = 0;
+        
+            while(number1 != 0)
+            {
+                count++;
+                number1 =number1 /10;
+            }
+             
+            if(count == 2)
+            {
+                System.out.println(three[number/10]+" ");
+                System.out.println(one[number%10]);
+            }
+            else if(count == 3)
+            {
+                System.out.println(one[number/100]+" hundred ");
+                number = number - ((number/100)*100);
+                System.out.println(three[number/10]+" ");
+                System.out.println(one[number%10]);
+                  
+            }
+        }   
+    }
+}
