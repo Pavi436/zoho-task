@@ -1,0 +1,25 @@
+import java.io.*;
+import java.util.*;
+import java.lang.Math;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        
+        for(int i = 0; i < n; i++)
+        {
+            int cycles = sc.nextInt();
+            
+            if(cycles % 2 == 0)
+            {
+                System.out.println((int) (Math.pow(2, cycles/2)*2) -1);
+            }
+            else
+            {
+                System.out.println((int) ((Math.pow(2, (cycles-1)/2)*2) -1)*2);
+            }
+        }
+    }
+}
