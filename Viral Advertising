@@ -1,0 +1,18 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc =new Scanner(System.in);
+        int n = sc.nextInt();
+         int sum=0,i,liked=0,recipiants=5;
+       for(i=0;i<n;i++){
+            liked =recipiants/2;
+            sum+=liked;
+           recipiants= liked*3;
+        }
+        System.out.println(sum);
+
+    }
+}
