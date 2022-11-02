@@ -1,0 +1,32 @@
+import java.io.*;
+import java.util.*;
+
+public class TwoString{
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int pairs = sc.nextInt(); sc.nextLine();
+        
+        for(int t = 0; t < pairs; t++)
+        {
+            String a = sc.nextLine();
+            String b = sc.nextLine();
+            
+            Set<Character> aLetterSet = new HashSet<>();
+            Set<Character> bLetterSet = new HashSet<>();
+            
+            for(int i = 0; i < a.length(); i++)
+                aLetterSet.add(a.charAt(i));
+            
+            for(int i = 0; i < b.length(); i++)
+                bLetterSet.add(b.charAt(i));
+            
+            aLetterSet.retainAll(bLetterSet);
+                
+            if(aLetterSet.size() > 0)
+                System.out.println("YES");
+            else
+                System.out.println("NO");
+        }
+    }
+}
